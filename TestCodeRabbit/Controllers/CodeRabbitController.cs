@@ -7,25 +7,24 @@ namespace TestCodeRabbit.Controllers
     [Route("[controller]")]
     public class CodeRabbitController : ControllerBase
     {
-        private ITestCodeRabbitService TEST_CODE_RABBIT;
+        private readonly ITestCodeRabbitService _testCodeRabbitService;
         public CodeRabbitController(ITestCodeRabbitService testCodeRabbitService)
         {
-            TEST_CODE_RABBIT = testCodeRabbitService;
+            _testCodeRabbitService = testCodeRabbitService;
         }
 
-        [HttpGet(Name = "GetRabit")]
+        [HttpGet(Name = "GetRabbit")]
         public IActionResult Get()
         {
             try
             {
-                var rabbit = TEST_CODE_RABBIT.GetRabbit();
+                var rabbit = _testCodeRabbitService.GetRabbit();
                 return Ok(rabbit);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                return StatusCode(500, "Fuck off! " + ex.Message);
             }
-            return null;
         }
     }
 }
