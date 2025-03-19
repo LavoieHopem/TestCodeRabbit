@@ -13,4 +13,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TestCodeRabbit.Services\TestCodeRabbit.Services.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,0 @@
-@TestCodeRabbit_HostAddress = http://localhost:5071
-
-GET {{TestCodeRabbit_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
