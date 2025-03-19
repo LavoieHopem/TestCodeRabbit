@@ -29,4 +29,16 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+    [HttpGet(Name = "GetWeatherForecastHardCoded")]
+    public IEnumerable<WeatherForecast> GetHardCoded()
+    {
+        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        {
+            Date = DateOnly.FromDateTime(DateTime.Now),
+            TemperatureC = 15,
+            Summary = Summaries[1]
+        })
+        .ToArray();
+    }
 }
