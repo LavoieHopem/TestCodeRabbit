@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,15 @@ namespace TestCodeRabbit.Services
 {
     public interface ITestCodeRabbitService
     {
-        RabbitDto GetRabbit();
-        IList<RabbitDto> GetRabbits();
+        /// <summary>
+/// Retrieves a single RabbitDto instance.
+/// </summary>
+/// <returns>An instance of RabbitDto representing rabbit data.</returns>
+RabbitDto GetRabbit();
+        /// <summary>
+/// Retrieves a list of RabbitDto objects.
+/// </summary>
+/// <returns>A list of RabbitDto instances.</returns>
+IList<RabbitDto> GetRabbits();
     }
 }
